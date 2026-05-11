@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="pesan">kasdkasd</p>
+
+    <script>
+        // variable = sebuah penampung value
+        // cost = nilainya tetap
+        // var = nilainya bisa di ubah
+        // let = nilai bisa di ubah juga
+
+        const nama_depan = "Doni";
+        const nama_belakang = "Simanjuntak";
+        console.log("Nama saya adalah " + nama_depan + " " + nama_belakang);
+
+        // ini concate
+        console.log(`Nama saya adalah ${nama_depan} ${nama_belakang}`);
+
+        let nama = "Susan";
+        let alamat = "PPKD-JAKPUS";
+        let pesan = "Halo ${nama}, sedang pelatihan di ${alamat}";
+        let angka1 = 1;
+        let angka2 = 2;
+
+        document.getElementById("pesan").innerHTML = pesan;
+        console.log(`hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
+        console.log(`hasilnya adalah: ${angka1} - ${angka2} =`, (angka1 - angka2));
+        console.log(`hasilnya adalah: ${angka1} * ${angka2} =`, (angka1 * angka2));
+        console.log(`hasilnya adalah: ${angka1} / ${angka2} =`, (angka1 / angka2));
+
+        console.log(`Hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
+
+
+        // document.write(pesan);
+    </script>
+
+</body>
+
+</html>

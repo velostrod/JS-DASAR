@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+
+<body>
+    <form action="" method="post" onsubmit="return false">
+        <label for="">Nilai 1</label>
+        <input type="number" id="nilai1"><br>
+        <select name="" id="operator" required>
+            <option value="">Pilih Operator</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select><br>
+
+        <label for="">Nilai 2</label>
+        <input type="number" id="nilai2"><br>
+        <button onclick="perhitungan()"> Hitung
+
+        </button>
+        <!-- <button onclick="penjumlahan()"> Hasil Penjumlahan</button>
+        <button onclick="pengurangan()"> Hasil Pengurangan</button>
+        <button onclick="perkalian()"> Hasil Perkalian</button>
+        <button onclick="pembagian()"> Hasil Pembagian</button> -->
+
+        <p id="hasil"></p>
+        <script>
+            function perhitungan() {
+                let nilai1 = parseFloat(document.getElementById("nilai1").value);
+                let nilai2 = parseFloat(document.getElementById("nilai2").value);
+                let operator = document.getElementById("operator").value;
+                let hasil = "";
+                switch (operator) {
+                    case '*':
+                        hasil = nilai1 * nilai2;
+                        break;
+
+                    case '/':
+                        hasil = nilai2 == 0 ? 'tidak boleh 0' : niali1 / nilai2;
+                        break;
+
+                    case '+':
+                        hasil = nilai1 + nilai2;
+                        break;
+
+                    case '-':
+                        hasil = nilai1 - nilai2;
+                        break;
+
+                    default:
+                        hasil = "operator tidak ada";
+
+                }
+
+                document.querySelector("#hasil").innerHTML = hasil;
+
+            }
+
+
+            // function penjumlahan() {
+            //     let nilai1 = parseFloat(document.getElementById("nilai1").value);
+            //     let nilai2 = parseFloat(document.getElementById("nilai2").value);
+            //     const total = nilai1 + nilai2;
+            //     document.querySelector("#hasil").innerHTML = total;
+            // }
+
+            // function pengurangan() {
+            //     let nilai1 = parseFloat(document.getElementById("nilai1").value);
+            //     let nilai2 = parseFloat(document.getElementById("nilai2").value);
+            //     let hasil = nilai1 - nilai2;
+            //     alert(`Hasil adalah ${hasil}`)
+            // }
+
+            // function perkalian() {
+            //     let nilai1 = parseFloat(document.getElementById("nilai1").value);
+            //     let nilai2 = parseFloat(document.getElementById("nilai2").value);
+            //     let total = nilai1 * nilai2;
+            //     document.querySelector("#hasil").innerHTML = total;
+
+            // }
+
+            // function pembagian() {
+            //     let nilai1 = parseFloat(document.getElementById("nilai1").value);
+            //     let nilai2 = parseFloat(document.getElementById("nilai2").value);
+            //     let total = nilai1 / nilai2;
+            //     document.querySelector("#hasil").innerHTML = total;
+            // }
+        </script>
+
+    </form>
+    <h4 id="hasil">
+
+    </h4>
+
+</body>
+
+</html>

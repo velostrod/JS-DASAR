@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan</title>
+</head>
+
+<body>
+    <h2>Form Passing Grade</h2>
+    <form action="" method="post" onsubmit="return false">
+        <label for="nilaiTeori"> Masukan Nilai Teori</label><br>
+        <input type="number" id="nilaiTeori"><br>
+
+        <label for="nilaiPraktik"> Masukan nilai Praktik</label><br>
+        <input type="number" id="nilaiPraktik"><br>
+
+        <label for="totalAbsen">Total Absensi</label><br>
+        <input type="number" id="totalAbsen"><br>
+
+        <button onclick="cekLulus()"> Hasil</button>
+
+    </form>
+
+    <p id="hasil"></p>
+    <script>
+        function cekLulus() {
+            let nilaiTeori = Number(document.getElementById("nilaiTeori").value);
+            let nilaiPraktik = Number(document.getElementById("nilaiPraktik").value);
+            let totalAbsen = Number(document.getElementById("totalAbsen").value);
+
+            let nilaiRata = (nilaiTeori + nilaiPraktik) / 2;
+            let status = "";
+
+            if (nilaiRata >= 75 && nilaiPraktik >= 75 && totalAbsen >= 90) {
+                if (nilaiRata > 90) {
+                    status = "Lulus - Sangan Baik";
+                } else {
+                    status = "Lulus";
+                }
+            } else {
+                status = "Tidak Lulus";
+            }
+            document.querySelector("#hasil").innerHTML = status;
+        }
+    </script>
+</body>
+
+</html>
