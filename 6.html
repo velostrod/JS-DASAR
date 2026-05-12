@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .text-success {
+        color: green;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input
+      type="text"
+      id="inputNama"
+      placeholder="Masukan nama anda"
+      value="" />
+    <button id="btn-sapa">Sapa saya!</button>
+
+    <h2 id="text-sapaan"></h2>
+
+    <br />
+    <br />
+
+    <ul id="daftar-belanja">
+      <li>Apek</li>
+      <li>Jeruk</li>
+      <li>Nanas</li>
+    </ul>
+    <button id="tambah-buah">Tambah Belanjaan</button>
+
+    <script>
+      // event handling + DOM
+      // #:id, class: . element/TAG
+      const btnSapa = document.getElementById("btn-sapa");
+      const daftarBelanja = document.getElementById("daftar-belanja");
+
+      btnSapa.addEventListener("click", function () {
+        // mau melakukan apa
+        const inputNama = document.getElementById("inputNama").value;
+        const textSapaan = document.getElementById("text-sapaan");
+        console.dir(inputNama);
+        textSapaan.innerText = `Halo, samlekum ${inputNama}`;
+        // textSapaan.style.color = "red"
+        // textSapaan.style.fontSize = "20px"
+        // textSapaan.style.fontWeight = "normal"
+        // menggunakan template literal yang menggunakan backtick (` `) dan $
+        textSapaan.classList.add("text-success"); // untuk menambahkan class
+        // textSapaan.innerText = "Halo, samlekum " + inputNama; // cara lama
+      });
+
+      const tambahBuah = document.getElementById("tambah-buah");
+      tambahBuah.addEventListener("click", function () {
+        //appendChild : analogy > hanya menambah tanpa merombak
+        //innerHTML : rombak untuk menambahkan, lebih efektif kalo misalkan listnya masih sedikit
+
+        let liBaru = document.createElement("li"); // untuk menggunakan appendchild
+        liBaru.innerText = "Semangka"; // untuk menggunakan appenchild
+        daftarBelanja.innerHTML += "<li>Pisang</li>"; // menggunakan innerHTML yang mana bongkar dalam arti harus masukan tagnya
+        daftarBelanja.appendChild(liBaru); // menggunakan appendchild yang mana harus memanggil lagi variable yang sudah di set di atas
+      });
+
+      // btnSapa.addEventListener('click', () => {}); == ini menggunakan arrow function
+    </script>
+  </body>
+</html>
